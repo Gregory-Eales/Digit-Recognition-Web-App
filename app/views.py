@@ -3,4 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello World! this is your first response")
+    return render(request, "app/index.html")
+
+def save_image(request):
+    img = Canvas(name=request.POST.get('canvas'))
+    img.save()
