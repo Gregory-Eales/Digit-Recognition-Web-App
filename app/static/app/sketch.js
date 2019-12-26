@@ -27,11 +27,17 @@ function drawPoints()
   }
 }
 
-
 function checkDraw()
 {
   if (mouseIsPressed)
   {
     points.push([mouseX, mouseY]);
   }
+}
+
+function sendCanvas()
+{
+  var canvas = document.getElementById("the_stage");
+	var dataURL = canvas.toDataURL('image/jpg');
+  httpPost('http://127.0.0.1:8000/', data=Canvas)
 }
